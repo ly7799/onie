@@ -1,0 +1,54 @@
+==== Copy device tree blob to /home/share/onie/build/images ====
+'/home/share/onie/build/nxp_ls1043ardb-r0/kernel/linux/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb-sdk.dtb' -> '/home/share/onie/build/images/nxp_ls1043ardb-r0.dtb'
+==== Create nxp_ls1043ardb-r0 u-boot multi-file .itb image ====
+FIT description: arm64 kernel, initramfs and FDT blob
+Created:         Tue Jul  7 05:34:27 2020
+ Image 0 (kernel)
+  Description:  nxp_ls1043ardb-r0 arm64 Kernel
+  Created:      Tue Jul  7 05:34:27 2020
+  Type:         Kernel Image
+  Compression:  gzip compressed
+  Data Size:    8811171 Bytes = 8604.66 KiB = 8.40 MiB
+  Architecture: AArch64
+  OS:           Linux
+  Load Address: 0x80080000
+  Entry Point:  0x80080000
+  Hash algo:    crc32
+  Hash value:   d6a3f903
+ Image 1 (initramfs)
+  Description:  initramfs
+  Created:      Tue Jul  7 05:34:27 2020
+  Type:         RAMDisk Image
+  Compression:  uncompressed
+  Data Size:    2849736 Bytes = 2782.95 KiB = 2.72 MiB
+  Architecture: AArch64
+  OS:           Linux
+  Load Address: 0x00000000
+  Entry Point:  0x00000000
+  Hash algo:    crc32
+  Hash value:   8b05cacd
+ Image 2 (dtb)
+  Description:  nxp_ls1043ardb-r0.dtb
+  Created:      Tue Jul  7 05:34:27 2020
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    30677 Bytes = 29.96 KiB = 0.03 MiB
+  Architecture: AArch64
+  Load Address: 0x90000000
+  Hash algo:    crc32
+  Hash value:   e6a28715
+ Default Configuration: 'nxp_ls1043ardb'
+ Configuration 0 (nxp_ls1043ardb)
+  Description:  nxp_ls1043ardb-r0
+  Kernel:       kernel
+  Init Ramdisk: initramfs
+  FDT:          dtb
+==== Create nxp_ls1043ardb-r0 ONIE binary image ====
+ln -sf /home/share/onie/build/images/nxp_ls1043ardb-r0.itb /home/share/onie/build/nxp_ls1043ardb-r0/onie.itb
+==== Create nxp_ls1043ardb-r0 ONIE updater ====
+Building self-extracting ONIE installer image ............ Done.
+Success:  ONIE installer image is ready in /home/share/onie/build/images/onie-updater-arm64-nxp_ls1043ardb-r0:
+-rw-r--r-- 1 root root 11911031 Jul  7 05:34 /home/share/onie/build/images/onie-updater-arm64-nxp_ls1043ardb-r0
+Created: /home/share/onie/build/images/onie-updater-arm64-nxp_ls1043ardb-r0
+=== Finished making onie-arm64-nxp_ls1043ardb-r0 master-07070439-dirty ===
+
